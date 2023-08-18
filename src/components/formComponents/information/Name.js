@@ -1,6 +1,6 @@
 import React from "react"
 
-const Name = ({handleChange}) => {
+const Name = ({ handleChange }) => {
   return (
     <>
       <div className="relative z-0 mb-6 w-full group">

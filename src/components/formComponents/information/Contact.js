@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Input from "react-phone-number-input/input"
-const Contact = ({handleChange}) => {
+const Contact = ({ handleChange }) => {
   const [phoneValue, setPhoneValue] = useState()
   return (
     <>

@@ -1,6 +1,6 @@
 import React from "react"
 
-const Address = ({handleChange}) => {
+const Address = ({ handleChange }) => {
   return (
     <>
       <div className="relative z-0 mb-6 w-full group">

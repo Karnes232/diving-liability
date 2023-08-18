@@ -11,7 +11,7 @@ const FormComponent = () => {
     console.log(medicalState)
     console.log(informationState)
   }
-  
+
   return (
     <form
       name="contact"
@@ -21,7 +21,10 @@ const FormComponent = () => {
       onSubmit={handleSubmit}
       className="max-w-sm mx-auto"
     >
-      <InformationForm informationState={informationState} setInformationState={setInformationState}/>
+      <InformationForm
+        informationState={informationState}
+        setInformationState={setInformationState}
+      />
       <MedicalForm
         medicalState={medicalState}
         setMedicalState={setMedicalState}
