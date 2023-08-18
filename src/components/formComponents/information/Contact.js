@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import Input from "react-phone-number-input/input"
-const Contact = ({ handleChange }) => {
-  const [phoneValue, setPhoneValue] = useState()
+
+const Contact = ({ handleChange, informationState }) => {
   return (
     <>
       <div className="relative z-0 mb-6 w-full group">
@@ -13,19 +12,26 @@ const Contact = ({ handleChange }) => {
           placeholder=" "
           required
           onChange={handleChange}
+          value={informationState.email}
         />
         <label htmlFor="email" className="contactFormLabel">
           Email address
         </label>
       </div>
       <div className="relative z-0 mb-6 w-full group">
-        <Input
+        <input
+          id="telephone"
+          type="tel"
           name="telephone"
-          placeholder="Enter phone number"
-          value={phoneValue}
-          onChange={setPhoneValue}
+          placeholder=" "
           className="contactFormInput peer"
+          required
+          onChange={handleChange}
+          value={informationState.telephone}
         />
+        <label htmlFor="telephone" className="contactFormLabel">
+          Enter phone number
+        </label>
       </div>
     </>
   )

@@ -1,7 +1,6 @@
 import React from "react"
 
 const Name = ({ handleChange, informationState }) => {
-  console.log(informationState)
   return (
     <>
       <div className="relative z-0 mb-6 w-full group">
@@ -28,6 +27,7 @@ const Name = ({ handleChange, informationState }) => {
           placeholder=" "
           required
           onChange={handleChange}
+          value={informationState.lastName}
         />
         <label htmlFor="lastName" className="contactFormLabel">
           Last Name
@@ -42,6 +42,7 @@ const Name = ({ handleChange, informationState }) => {
           placeholder=" "
           required
           onChange={handleChange}
+          value={informationState.birthdate}
         />
         <label htmlFor="birthdate" className="contactFormLabel">
           Birthdate

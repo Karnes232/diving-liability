@@ -8,13 +8,21 @@ const FormComponent = () => {
   const [informationState, setInformationState] = useState({
     firstName: "",
     lastName: "",
+    birthdate: "",
+    email: "",
+    telephone: "",
+    address: "",
+    city: "",
+    state: "",
+    zipcode: "",
+    country: "",
   })
   const handleSubmit = e => {
     e.preventDefault()
     console.log(medicalState)
     console.log(informationState)
   }
-  
+
   return (
     <form
       name="contact"

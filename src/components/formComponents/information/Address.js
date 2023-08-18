@@ -1,6 +1,6 @@
 import React from "react"
 
-const Address = ({ handleChange }) => {
+const Address = ({ handleChange, informationState }) => {
   return (
     <>
       <div className="relative z-0 mb-6 w-full group">
@@ -12,6 +12,7 @@ const Address = ({ handleChange }) => {
           placeholder=" "
           required
           onChange={handleChange}
+          value={informationState.address}
         />
         <label htmlFor="address" className="contactFormLabel">
           Address
@@ -26,6 +27,7 @@ const Address = ({ handleChange }) => {
           placeholder=" "
           required
           onChange={handleChange}
+          value={informationState.city}
         />
         <label htmlFor="city" className="contactFormLabel">
           City
@@ -41,6 +43,7 @@ const Address = ({ handleChange }) => {
             placeholder=" "
             required
             onChange={handleChange}
+            value={informationState.state}
           />
           <label htmlFor="state" className="contactFormLabel">
             State
@@ -55,6 +58,7 @@ const Address = ({ handleChange }) => {
             placeholder=" "
             required
             onChange={handleChange}
+            value={informationState.zipcode}
           />
           <label htmlFor="zipcode" className="contactFormLabel">
             Zip Code
@@ -70,6 +74,7 @@ const Address = ({ handleChange }) => {
           placeholder=" "
           required
           onChange={handleChange}
+          value={informationState.country}
         />
         <label htmlFor="country" className="contactFormLabel">
           Country
