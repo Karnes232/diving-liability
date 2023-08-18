@@ -18,6 +18,7 @@ const FormComponent = () => {
     console.log(medicalState)
     console.log(informationState)
   }
+  
   return (
     <form
       name="contact"
@@ -36,7 +37,7 @@ const FormComponent = () => {
         setMedicalState={setMedicalState}
       />
       <DiscoverNonDiscloure />
-      <DiscoverLiability />
+      <DiscoverLiability firstName={informationState.firstName} lastName={informationState.lastName}/>
       <div className="flex mt-10 justify-center items-center">
         <button
           type="submit"
