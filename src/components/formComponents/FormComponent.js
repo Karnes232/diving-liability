@@ -53,14 +53,15 @@ const FormComponent = () => {
       id="contact"
       onSubmit={handleSubmit}
       className="max-w-sm mx-auto min-h-[75vh]"
+      ref={informationInputs}
     >
-    <div ref={informationInputs}>
+   
       <InformationForm
         informationState={informationState}
         setInformationState={setInformationState}
         errors={informationError}
       />
-    </div>
+ 
       <MedicalForm
         medicalState={medicalState}
         setMedicalState={setMedicalState}
