@@ -5,7 +5,7 @@ import FormComponent from "../components/formComponents/FormComponent"
 const IndexPage = () => {
   return (
     <Layout>
-      <main>
+      <main className="min-h-screen">
         <FormComponent />
       </main>
     </Layout>

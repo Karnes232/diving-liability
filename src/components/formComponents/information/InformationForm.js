@@ -3,7 +3,7 @@ import Name from "./Name"
 import Contact from "./Contact"
 import Address from "./Address"
 import { useState } from "react"
-
+import { BsArrowsAngleExpand, BsArrowsAngleContract } from "react-icons/bs"
 const InformationForm = ({ informationState, setInformationState }) => {
   const [readMore, setReadMore] = useState(false)
   const handleChange = e => {
@@ -18,10 +18,12 @@ const InformationForm = ({ informationState, setInformationState }) => {
   return (
     <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow">
       <div
-        className="p-2 text-lg bg-slate-200 w-full"
+        className="p-2 text-lg bg-slate-200 w-full flex justify-between items-center"
         onClick={e => setReadMore(!readMore)}
       >
-        Participant Information
+      <div>Participant Information</div>
+      <div><div className="pr-1 text-lg"> {readMore ? <BsArrowsAngleContract /> :  <BsArrowsAngleExpand /> }</div></div>
+        
       </div>
 
       {readMore ? (
