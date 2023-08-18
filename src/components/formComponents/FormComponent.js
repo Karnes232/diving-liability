@@ -20,7 +20,7 @@ const FormComponent = () => {
   )
 
   let sigCanvas = useRef()
-
+  const informationInputs = useRef(null);
   const handleSubmit = async e => {
     e.preventDefault()
     const notValid = await formValidation(informationState)
@@ -36,6 +36,7 @@ const FormComponent = () => {
         setInformationError(false)
       } else {
         console.log("Participant Information Missing")
+        informationInputs.current?.focus()
         setInformationError(true)
       }
     } else {
@@ -53,11 +54,13 @@ const FormComponent = () => {
       onSubmit={handleSubmit}
       className="max-w-sm mx-auto min-h-[75vh]"
     >
+    <div ref={informationInputs}>
       <InformationForm
         informationState={informationState}
         setInformationState={setInformationState}
         errors={informationError}
       />
+    </div>
       <MedicalForm
         medicalState={medicalState}
         setMedicalState={setMedicalState}
