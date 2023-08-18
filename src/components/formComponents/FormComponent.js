@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 
 import MedicalForm from "./medical/MedicalForm"
 import InformationForm from "./information/InformationForm"
@@ -8,17 +8,21 @@ import {
 } from "../../data/stateObjects"
 import DiscoverNonDiscloure from "./liability/DiscoverNonDiscloure"
 import DiscoverLiability from "./liability/DiscoverLiability"
+import Signature from "./signature/Signature"
 const FormComponent = () => {
   const [medicalState, setMedicalState] = useState(medicalStateObject)
   const [informationState, setInformationState] = useState(
     informationStateObject,
   )
-  const handleSubmit = e => {
+
+  let sigCanvas = useRef()
+
+  const handleSubmit = async e => {
     e.preventDefault()
-    console.log(medicalState)
-    console.log(informationState)
+    const URL = sigCanvas.current.getTrimmedCanvas().toDataURL("image/webp")
+    console.log(URL)
   }
-  
+
   return (
     <form
       name="contact"
@@ -37,7 +41,11 @@ const FormComponent = () => {
         setMedicalState={setMedicalState}
       />
       <DiscoverNonDiscloure />
-      <DiscoverLiability firstName={informationState.firstName} lastName={informationState.lastName}/>
+      <DiscoverLiability
+        firstName={informationState.firstName}
+        lastName={informationState.lastName}
+      />
+      <Signature sigCanvas={sigCanvas} />
       <div className="flex mt-10 justify-center items-center">
         <button
           type="submit"
