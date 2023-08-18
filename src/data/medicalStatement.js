@@ -30,7 +30,7 @@ export const medicalQuestions = [
       {
         question:
           "Symptoms affecting my lungs, breathing, heart and/or blood in the last 30 days that impair my physical or mental performance.",
-        Id: "30DayBreathing",
+        Id: "DayBreathing",
       },
     ],
   },

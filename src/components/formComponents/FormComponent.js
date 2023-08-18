@@ -2,27 +2,16 @@ import React, { useState } from "react"
 
 import MedicalForm from "./medical/MedicalForm"
 import InformationForm from "./information/InformationForm"
-
+import { informationStateObject, medicalStateObject } from "../../data/stateObjects"
 const FormComponent = () => {
-  const [medicalState, setMedicalState] = useState({})
-  const [informationState, setInformationState] = useState({
-    firstName: "",
-    lastName: "",
-    birthdate: "",
-    email: "",
-    telephone: "",
-    address: "",
-    city: "",
-    state: "",
-    zipcode: "",
-    country: "",
-  })
+  const [medicalState, setMedicalState] = useState(medicalStateObject)
+  const [informationState, setInformationState] = useState(informationStateObject)
   const handleSubmit = e => {
     e.preventDefault()
     console.log(medicalState)
-    console.log(informationState)
-  }
 
+  }
+  console.log(medicalState)
   return (
     <form
       name="contact"
