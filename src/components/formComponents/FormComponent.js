@@ -15,12 +15,9 @@ const FormComponent = () => {
   const [informationError, setInformationError] = useState(false)
   const [signatureMissing, setSignatureMissing] = useState(false)
   const [medicalState, setMedicalState] = useState(medicalStateObject)
-  const [informationState, setInformationState] = useState(
-    informationStateObject,
-  )
+  const [informationState, setInformationState] = useState(informationStateObject)
 
   let sigCanvas = useRef()
-  const informationInputs = useRef(null);
   const handleSubmit = async e => {
     e.preventDefault()
     const notValid = await formValidation(informationState)
@@ -36,8 +33,11 @@ const FormComponent = () => {
         setInformationError(false)
       } else {
         console.log("Participant Information Missing")
-        informationInputs.current?.focus()
         setInformationError(true)
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+      })
       }
     } else {
       setSignatureMissing(true)
@@ -53,7 +53,6 @@ const FormComponent = () => {
       id="contact"
       onSubmit={handleSubmit}
       className="max-w-sm mx-auto min-h-[75vh]"
-      ref={informationInputs}
     >
    
       <InformationForm
