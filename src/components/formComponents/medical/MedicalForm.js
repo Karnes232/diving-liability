@@ -19,7 +19,7 @@ const MedicalForm = ({ medicalState, setMedicalState }) => {
     })
   }
   return (
-    <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+    <div className="mt-5 mb-10 block  bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
       <div onClick={e => setReadMoreForm(!readMoreForm)}>
         <div className="p-2 text-sm bg-slate-200 w-full flex justify-between items-center">
           <div>Please Complete the form </div>

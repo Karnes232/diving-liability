@@ -19,7 +19,6 @@ const Signature = ({ sigCanvas, signatureMissing }) => {
       >
         Clear
       </button>
-      
     </div>
   )
 }

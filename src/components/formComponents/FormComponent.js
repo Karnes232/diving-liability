@@ -10,12 +10,27 @@ import DiscoverNonDiscloure from "./liability/DiscoverNonDiscloure"
 import DiscoverLiability from "./liability/DiscoverLiability"
 import Signature from "./signature/Signature"
 import { formValidation } from "./formValidation"
+import axios from "axios"
 
 const FormComponent = () => {
   const [informationError, setInformationError] = useState(false)
   const [signatureMissing, setSignatureMissing] = useState(false)
   const [medicalState, setMedicalState] = useState(medicalStateObject)
-  const [informationState, setInformationState] = useState(informationStateObject)
+  const [informationState, setInformationState] = useState(
+    informationStateObject,
+  )
+
+  // const createPdf = async data => {
+  //   axios.post("/api/pdf", {
+  //     data: data,
+  //   })
+  //   .then(function (response) {
+  //     console.log(response)
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error)
+  //   })
+  // }
 
   let sigCanvas = useRef()
   const handleSubmit = async e => {
@@ -29,7 +44,8 @@ const FormComponent = () => {
         .toDataURL("image/webp")
       setSignatureMissing(false)
       if (notValid === false) {
-        console.log("Winner Winner Chicken Dinner")
+        // createPdf(medicalState)
+        console.log('Winner')
         setInformationError(false)
       } else {
         console.log("Participant Information Missing")
@@ -37,7 +53,7 @@ const FormComponent = () => {
         window.scrollTo({
           top: 0,
           behavior: "smooth",
-      })
+        })
       }
     } else {
       setSignatureMissing(true)
@@ -54,13 +70,12 @@ const FormComponent = () => {
       onSubmit={handleSubmit}
       className="max-w-sm mx-auto min-h-[75vh]"
     >
-   
       <InformationForm
         informationState={informationState}
         setInformationState={setInformationState}
         errors={informationError}
       />
- 
+
       <MedicalForm
         medicalState={medicalState}
         setMedicalState={setMedicalState}
@@ -70,7 +85,7 @@ const FormComponent = () => {
         firstName={informationState.firstName}
         lastName={informationState.lastName}
       />
-      <Signature sigCanvas={sigCanvas} signatureMissing={signatureMissing}/>
+      <Signature sigCanvas={sigCanvas} signatureMissing={signatureMissing} />
       <div className="flex mt-10 justify-center items-center">
         <button
           type="submit"

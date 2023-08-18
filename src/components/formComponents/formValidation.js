@@ -1,4 +1,4 @@
-export const formValidation = (informationState) => {
+export const formValidation = informationState => {
   if (
     informationState.firstName === undefined ||
     informationState.firstName.trim() === ""
@@ -9,7 +9,8 @@ export const formValidation = (informationState) => {
     informationState.lastName === undefined ||
     informationState.lastName.trim() === ""
   ) {
-    return true }
+    return true
+  }
   if (
     informationState.birthdate === undefined ||
     informationState.birthdate.trim() === ""
@@ -33,7 +34,7 @@ export const formValidation = (informationState) => {
     informationState.email.trim() === ""
   ) {
     return true
-  } 
+  }
   if (
     informationState.firstName.trim() != "" &&
     informationState.lastName.trim() != "" &&
@@ -44,5 +45,4 @@ export const formValidation = (informationState) => {
   ) {
     return false
   }
-
 }
