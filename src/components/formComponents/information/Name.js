@@ -38,7 +38,7 @@ const Name = ({ handleChange, informationState }) => {
           type="date"
           name="birthdate"
           id="birthdate"
-          className="contactFormInput peer"
+          className="contactFormInput peer min-h-[2.8rem]"
           placeholder=" "
           required
           onChange={handleChange}

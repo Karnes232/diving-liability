@@ -6,7 +6,8 @@ import InformationForm from "./information/InformationForm"
 const FormComponent = () => {
   const [medicalState, setMedicalState] = useState({})
   const [informationState, setInformationState] = useState({
-    firstName: ""
+    firstName: "",
+    lastName: "",
   })
   const handleSubmit = e => {
     e.preventDefault()
