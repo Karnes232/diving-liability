@@ -13,6 +13,7 @@ import { formValidation } from "./formValidation"
 
 const FormComponent = () => {
   const [informationError, setInformationError] = useState(false)
+  const [signatureMissing, setSignatureMissing] = useState(false)
   const [medicalState, setMedicalState] = useState(medicalStateObject)
   const [informationState, setInformationState] = useState(
     informationStateObject,
@@ -22,9 +23,25 @@ const FormComponent = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    formValidation(informationState, setInformationError)
-    const URL = sigCanvas.current.getTrimmedCanvas().toDataURL("image/webp")
-    console.log(informationError)
+    const notValid = await formValidation(informationState)
+    const isEmpty = sigCanvas.current.isEmpty()
+    let signatureImage = ""
+    if (isEmpty === false) {
+      signatureImage = sigCanvas.current
+        .getTrimmedCanvas()
+        .toDataURL("image/webp")
+      setSignatureMissing(false)
+      if (notValid === false) {
+        console.log("Winner Winner Chicken Dinner")
+        setInformationError(false)
+      } else {
+        console.log("Participant Information Missing")
+        setInformationError(true)
+      }
+    } else {
+      setSignatureMissing(true)
+      console.log("Signature Missing")
+    }
   }
 
   return (
@@ -50,7 +67,7 @@ const FormComponent = () => {
         firstName={informationState.firstName}
         lastName={informationState.lastName}
       />
-      <Signature sigCanvas={sigCanvas} />
+      <Signature sigCanvas={sigCanvas} signatureMissing={signatureMissing}/>
       <div className="flex mt-10 justify-center items-center">
         <button
           type="submit"
