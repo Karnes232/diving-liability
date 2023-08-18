@@ -6,6 +6,7 @@ import {
   informationStateObject,
   medicalStateObject,
 } from "../../data/stateObjects"
+import DiscoverNonDiscloure from "./liability/DiscoverNonDiscloure"
 import DiscoverLiability from "./liability/DiscoverLiability"
 const FormComponent = () => {
   const [medicalState, setMedicalState] = useState(medicalStateObject)
@@ -34,6 +35,7 @@ const FormComponent = () => {
         medicalState={medicalState}
         setMedicalState={setMedicalState}
       />
+      <DiscoverNonDiscloure />
       <DiscoverLiability />
       <div className="flex mt-10 justify-center items-center">
         <button
