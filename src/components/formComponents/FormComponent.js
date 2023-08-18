@@ -14,6 +14,7 @@ const FormComponent = () => {
   const handleSubmit = e => {
     e.preventDefault()
     console.log(medicalState)
+    console.log(informationState)
   }
   return (
     <form
