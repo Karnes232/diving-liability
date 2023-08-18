@@ -14,7 +14,7 @@ const InformationForm = ({ informationState, setInformationState }) => {
       [e.target.name]: value,
     })
   }
-  console.log(readMore)
+  
   return (
     <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow">
       <div
@@ -27,7 +27,7 @@ const InformationForm = ({ informationState, setInformationState }) => {
       {readMore ? (
         <>
           <section className="p-5">
-            <Name handleChange={handleChange} />
+            <Name handleChange={handleChange} informationState={informationState}/>
             <Contact handleChange={handleChange} />
             <Address handleChange={handleChange} />
           </section>

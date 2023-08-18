@@ -1,6 +1,7 @@
 import React from "react"
 
-const Name = ({ handleChange }) => {
+const Name = ({ handleChange, informationState }) => {
+  console.log(informationState)
   return (
     <>
       <div className="relative z-0 mb-6 w-full group">
@@ -12,6 +13,7 @@ const Name = ({ handleChange }) => {
           placeholder=" "
           required
           onChange={handleChange}
+          value={informationState.firstName}
         />
         <label htmlFor="firstName" className="contactFormLabel">
           First Name

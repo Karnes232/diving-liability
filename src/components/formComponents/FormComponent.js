@@ -5,13 +5,15 @@ import InformationForm from "./information/InformationForm"
 
 const FormComponent = () => {
   const [medicalState, setMedicalState] = useState({})
-  const [informationState, setInformationState] = useState({})
+  const [informationState, setInformationState] = useState({
+    firstName: ""
+  })
   const handleSubmit = e => {
     e.preventDefault()
     console.log(medicalState)
     console.log(informationState)
   }
-
+  
   return (
     <form
       name="contact"
