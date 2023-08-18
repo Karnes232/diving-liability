@@ -21,9 +21,13 @@ const InformationForm = ({ informationState, setInformationState }) => {
         className="p-2 text-lg bg-slate-200 w-full flex justify-between items-center"
         onClick={e => setReadMore(!readMore)}
       >
-      <div>Participant Information</div>
-      <div><div className="pr-1 text-lg"> {readMore ? <BsArrowsAngleContract /> :  <BsArrowsAngleExpand /> }</div></div>
-        
+        <div>Participant Information</div>
+        <div>
+          <div className="pr-1 text-lg">
+            {" "}
+            {readMore ? <BsArrowsAngleContract /> : <BsArrowsAngleExpand />}
+          </div>
+        </div>
       </div>
 
       {readMore ? (

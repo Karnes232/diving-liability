@@ -6,6 +6,7 @@ import {
   informationStateObject,
   medicalStateObject,
 } from "../../data/stateObjects"
+import DiscoverLiability from "./liability/DiscoverLiability"
 const FormComponent = () => {
   const [medicalState, setMedicalState] = useState(medicalStateObject)
   const [informationState, setInformationState] = useState(
@@ -33,6 +34,7 @@ const FormComponent = () => {
         medicalState={medicalState}
         setMedicalState={setMedicalState}
       />
+      <DiscoverLiability />
       <div className="flex mt-10 justify-center items-center">
         <button
           type="submit"

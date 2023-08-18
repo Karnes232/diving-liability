@@ -23,11 +23,13 @@ const MedicalForm = ({ medicalState, setMedicalState }) => {
       <div onClick={e => setReadMoreForm(!readMoreForm)}>
         <div className="p-2 text-sm bg-slate-200 w-full flex justify-between items-center">
           <div>Please Complete the form </div>
-          <div className="pr-1 text-lg"> {readMoreForm ? <BsArrowsAngleContract /> :  <BsArrowsAngleExpand /> }</div>
-          
+          <div className="pr-1 text-lg">
+            {" "}
+            {readMoreForm ? <BsArrowsAngleContract /> : <BsArrowsAngleExpand />}
+          </div>
         </div>
         <div className="p-2 text-lg bg-slate-200">
-          Diver Medical Participant Questionnaire 
+          Diver Medical Participant Questionnaire
         </div>
       </div>
       {readMoreForm ? (
