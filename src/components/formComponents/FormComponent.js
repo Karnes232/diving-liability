@@ -9,7 +9,10 @@ import {
 import DiscoverNonDiscloure from "./liability/DiscoverNonDiscloure"
 import DiscoverLiability from "./liability/DiscoverLiability"
 import Signature from "./signature/Signature"
+import { formValidation } from "./formValidation"
+
 const FormComponent = () => {
+  const [informationError, setInformationError] = useState(false)
   const [medicalState, setMedicalState] = useState(medicalStateObject)
   const [informationState, setInformationState] = useState(
     informationStateObject,
@@ -19,8 +22,9 @@ const FormComponent = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    formValidation(informationState, setInformationError)
     const URL = sigCanvas.current.getTrimmedCanvas().toDataURL("image/webp")
-    console.log(URL)
+    console.log(informationError)
   }
 
   return (
@@ -35,6 +39,7 @@ const FormComponent = () => {
       <InformationForm
         informationState={informationState}
         setInformationState={setInformationState}
+        errors={informationError}
       />
       <MedicalForm
         medicalState={medicalState}

@@ -41,7 +41,6 @@ const Address = ({ handleChange, informationState }) => {
             id="state"
             className="contactFormInput peer"
             placeholder=" "
-            required
             onChange={handleChange}
             value={informationState.state}
           />
@@ -56,7 +55,6 @@ const Address = ({ handleChange, informationState }) => {
             id="zipcode"
             className="contactFormInput peer"
             placeholder=" "
-            required
             onChange={handleChange}
             value={informationState.zipcode}
           />

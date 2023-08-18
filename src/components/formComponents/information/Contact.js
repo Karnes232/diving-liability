@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 const Contact = ({ handleChange, informationState }) => {
   return (
@@ -25,7 +25,6 @@ const Contact = ({ handleChange, informationState }) => {
           name="telephone"
           placeholder=" "
           className="contactFormInput peer"
-          required
           onChange={handleChange}
           value={informationState.telephone}
         />

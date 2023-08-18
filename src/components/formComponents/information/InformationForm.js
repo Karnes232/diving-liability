@@ -4,7 +4,7 @@ import Contact from "./Contact"
 import Address from "./Address"
 import { useState } from "react"
 import { BsArrowsAngleExpand, BsArrowsAngleContract } from "react-icons/bs"
-const InformationForm = ({ informationState, setInformationState }) => {
+const InformationForm = ({ informationState, setInformationState, errors }) => {
   const [readMore, setReadMore] = useState(false)
   const handleChange = e => {
     const value =
@@ -29,7 +29,9 @@ const InformationForm = ({ informationState, setInformationState }) => {
           </div>
         </div>
       </div>
-
+      {errors && (
+        <div className="p-2 bg-yellow-300">This field is required</div>
+      )}
       {readMore ? (
         <>
           <section className="p-5">
