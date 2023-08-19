@@ -54,6 +54,7 @@ const PDFFile = ({name}) => {
     <Document>
       {pages.map((page, index) => {
         return (
+            <>
           <Page key={index} style={{...styles.body, backgroundColor: pageColors[index]}}>
           <Text style={styles.header} fixed></Text>
           <Image style={styles.image} src={page.image} />
@@ -67,6 +68,20 @@ const PDFFile = ({name}) => {
             }
           />
         </Page>
+        <Page key={index} style={{...styles.body, backgroundColor: pageColors[index]}}>
+          <Text style={styles.header} fixed></Text>
+          <Image style={styles.image} src={page.image} />
+          <Text style={styles.text}>
+          {name}
+          </Text>
+          <Text
+            style={styles.pageNumber}
+            render={({ pageNumber, totalPages }) =>
+              `${pageNumber} / ${totalPages}`
+            }
+          />
+        </Page>
+        </>
         )
       })}
 
