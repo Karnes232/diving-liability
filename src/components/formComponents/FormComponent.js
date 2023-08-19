@@ -10,7 +10,7 @@ import DiscoverNonDiscloure from "./liability/DiscoverNonDiscloure"
 import DiscoverLiability from "./liability/DiscoverLiability"
 import Signature from "./signature/Signature"
 import { formValidation } from "./formValidation"
-import axios from "axios"
+// import axios from "axios"
 
 const FormComponent = () => {
   const [informationError, setInformationError] = useState(false)
@@ -45,7 +45,7 @@ const FormComponent = () => {
       setSignatureMissing(false)
       if (notValid === false) {
         // createPdf(medicalState)
-        console.log('Winner')
+        console.log("Winner")
         setInformationError(false)
       } else {
         console.log("Participant Information Missing")
